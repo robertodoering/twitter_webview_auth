@@ -8,7 +8,7 @@ This Flutter package implements the 3-legged oauth authentication flow using [we
 
 - Get access to the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) and create a 'Standalone App' in the [Twitter developer portal](https://developer.twitter.com/en/portal/projects-and-apps)
 - Enable `OAuth 1.0a` for your app
-- Enter a callback url. This can be any arbitrary url or just the scheme.
+- Enter a callback url. This can be any arbitrary url or just the scheme
   - e.g. `app://`
 
 ## Usage
