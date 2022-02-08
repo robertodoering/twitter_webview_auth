@@ -2,7 +2,7 @@
 
 [![pub](https://img.shields.io/pub/v/twitter_webview_auth)](https://pub.dev/packages/twitter_webview_auth)
 
-This flutter package implements the 3-legged oauth authentication using [webview_flutter](https://pub.dev/packages/webview_flutter).
+This flutter package implements the 3-legged oauth authentication flow using [webview_flutter](https://pub.dev/packages/webview_flutter).
 
 ## Getting started
 
