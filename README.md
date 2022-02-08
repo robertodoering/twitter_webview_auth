@@ -14,14 +14,14 @@ This Flutter package implements the 3-legged oauth authentication flow using [we
 ## Usage
 
 ```dart
-final result = await TwitterAuth(
+final TwitterAuthResult result = await TwitterAuth(
   consumerKey: 'your_consumer_key',
   consumerSecret: 'your_consumer_secret',
   callbackUrl: 'your_callback_url',
 ).authenticateWithTwitter(
-  webviewNavigation: (webview) => Navigator.of(context).push(
+  webviewNavigation: (Widget webview) => Navigator.of(context).push(
     MaterialPageRoute(
-      builder: (context) => Scaffold(
+      builder: (_) => Scaffold(
         appBar: AppBar(title: const Text('Login')),
         body: webview,
       ),
@@ -30,10 +30,10 @@ final result = await TwitterAuth(
 );
 
 result.when(
-  success: (token, secret, userId) {
+  success: (String token, String secret, String userId) {
     // user successfully authenticated
   },
-  failure: (dynamic e, st) {
+  failure: (dynamic e, StackTrace? st) {
     // authentication failed
   },
   cancelled: () {
