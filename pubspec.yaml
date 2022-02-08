@@ -1,0 +1,22 @@
+name: twitter_webview_auth
+description: Twitter oauth1 webview authentication implemention using webview_flutter
+version: 0.0.1
+homepage: https://github.com/robertodoering/twitter_webview_auth
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^1.1.0
+  oauth1: ^2.0.0
+  webview_flutter: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  freezed: ^1.1.1
+  build_runner: ^2.1.7
