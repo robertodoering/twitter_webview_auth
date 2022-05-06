@@ -12,35 +12,7 @@ part of 'twitter_auth_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TwitterAuthResultTearOff {
-  const _$TwitterAuthResultTearOff();
-
-  _Success success(
-      {required String token, required String secret, required String userId}) {
-    return _Success(
-      token: token,
-      secret: secret,
-      userId: userId,
-    );
-  }
-
-  _Failure failure([dynamic error, StackTrace? stackTrace]) {
-    return _Failure(
-      error,
-      stackTrace,
-    );
-  }
-
-  _Cancelled cancelled() {
-    return const _Cancelled();
-  }
-}
-
-/// @nodoc
-const $TwitterAuthResult = _$TwitterAuthResultTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TwitterAuthResult {
@@ -109,20 +81,22 @@ class _$TwitterAuthResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<$Res> {
-  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
-      __$SuccessCopyWithImpl<$Res>;
+abstract class _$$_SuccessCopyWith<$Res> {
+  factory _$$_SuccessCopyWith(
+          _$_Success value, $Res Function(_$_Success) then) =
+      __$$_SuccessCopyWithImpl<$Res>;
   $Res call({String token, String secret, String userId});
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$SuccessCopyWith<$Res> {
-  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
-      : super(_value, (v) => _then(v as _Success));
+class __$$_SuccessCopyWithImpl<$Res>
+    extends _$TwitterAuthResultCopyWithImpl<$Res>
+    implements _$$_SuccessCopyWith<$Res> {
+  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+      : super(_value, (v) => _then(v as _$_Success));
 
   @override
-  _Success get _value => super._value as _Success;
+  _$_Success get _value => super._value as _$_Success;
 
   @override
   $Res call({
@@ -130,7 +104,7 @@ class __$SuccessCopyWithImpl<$Res> extends _$TwitterAuthResultCopyWithImpl<$Res>
     Object? secret = freezed,
     Object? userId = freezed,
   }) {
-    return _then(_Success(
+    return _then(_$_Success(
       token: token == freezed
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -169,7 +143,7 @@ class _$_Success implements _Success {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Success &&
+            other is _$_Success &&
             const DeepCollectionEquality().equals(other.token, token) &&
             const DeepCollectionEquality().equals(other.secret, secret) &&
             const DeepCollectionEquality().equals(other.userId, userId));
@@ -184,8 +158,8 @@ class _$_Success implements _Success {
 
   @JsonKey(ignore: true)
   @override
-  _$SuccessCopyWith<_Success> get copyWith =>
-      __$SuccessCopyWithImpl<_Success>(this, _$identity);
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -259,40 +233,42 @@ class _$_Success implements _Success {
 
 abstract class _Success implements TwitterAuthResult {
   const factory _Success(
-      {required String token,
-      required String secret,
-      required String userId}) = _$_Success;
+      {required final String token,
+      required final String secret,
+      required final String userId}) = _$_Success;
 
-  String get token;
-  String get secret;
-  String get userId;
+  String get token => throw _privateConstructorUsedError;
+  String get secret => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SuccessCopyWith<_Success> get copyWith =>
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+abstract class _$$_FailureCopyWith<$Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure value, $Res Function(_$_Failure) then) =
+      __$$_FailureCopyWithImpl<$Res>;
   $Res call({dynamic error, StackTrace? stackTrace});
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
-      : super(_value, (v) => _then(v as _Failure));
+class __$$_FailureCopyWithImpl<$Res>
+    extends _$TwitterAuthResultCopyWithImpl<$Res>
+    implements _$$_FailureCopyWith<$Res> {
+  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+      : super(_value, (v) => _then(v as _$_Failure));
 
   @override
-  _Failure get _value => super._value as _Failure;
+  _$_Failure get _value => super._value as _$_Failure;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? stackTrace = freezed,
   }) {
-    return _then(_Failure(
+    return _then(_$_Failure(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -324,7 +300,7 @@ class _$_Failure implements _Failure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Failure &&
+            other is _$_Failure &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality()
                 .equals(other.stackTrace, stackTrace));
@@ -338,8 +314,8 @@ class _$_Failure implements _Failure {
 
   @JsonKey(ignore: true)
   @override
-  _$FailureCopyWith<_Failure> get copyWith =>
-      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -412,31 +388,33 @@ class _$_Failure implements _Failure {
 }
 
 abstract class _Failure implements TwitterAuthResult {
-  const factory _Failure([dynamic error, StackTrace? stackTrace]) = _$_Failure;
+  const factory _Failure([final dynamic error, final StackTrace? stackTrace]) =
+      _$_Failure;
 
-  dynamic get error;
-  StackTrace? get stackTrace;
+  dynamic get error => throw _privateConstructorUsedError;
+  StackTrace? get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<_Failure> get copyWith =>
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CancelledCopyWith<$Res> {
-  factory _$CancelledCopyWith(
-          _Cancelled value, $Res Function(_Cancelled) then) =
-      __$CancelledCopyWithImpl<$Res>;
+abstract class _$$_CancelledCopyWith<$Res> {
+  factory _$$_CancelledCopyWith(
+          _$_Cancelled value, $Res Function(_$_Cancelled) then) =
+      __$$_CancelledCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CancelledCopyWithImpl<$Res>
+class __$$_CancelledCopyWithImpl<$Res>
     extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$CancelledCopyWith<$Res> {
-  __$CancelledCopyWithImpl(_Cancelled _value, $Res Function(_Cancelled) _then)
-      : super(_value, (v) => _then(v as _Cancelled));
+    implements _$$_CancelledCopyWith<$Res> {
+  __$$_CancelledCopyWithImpl(
+      _$_Cancelled _value, $Res Function(_$_Cancelled) _then)
+      : super(_value, (v) => _then(v as _$_Cancelled));
 
   @override
-  _Cancelled get _value => super._value as _Cancelled;
+  _$_Cancelled get _value => super._value as _$_Cancelled;
 }
 
 /// @nodoc
@@ -452,7 +430,7 @@ class _$_Cancelled implements _Cancelled {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Cancelled);
+        (other.runtimeType == runtimeType && other is _$_Cancelled);
   }
 
   @override
