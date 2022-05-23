@@ -1,7 +1,6 @@
 import 'package:oauth1/oauth1.dart' as oauth1;
 import 'package:twitter_webview_auth/src/twitter_auth_result.dart';
 import 'package:twitter_webview_auth/src/twitter_login_webview.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 /// Used to navigate to the [TwitterLoginWebview] and return its result.
 ///

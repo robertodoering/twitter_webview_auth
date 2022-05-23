@@ -1,6 +1,6 @@
 name: twitter_webview_auth
 description: Twitter oauth1 webview authentication implemention using webview_flutter
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/robertodoering/twitter_webview_auth
 
 environment:
