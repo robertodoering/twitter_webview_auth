@@ -12,7 +12,7 @@ typedef OnExternalNavigation = void Function(String url);
 /// called with the callback url as a [Uri] instance.
 /// The callback url contains the token and secret as query params on
 /// success, or a denied query param on user cancel.
-class TwitterLoginWebview extends StatelessWidget {
+class TwitterLoginWebview extends StatefulWidget {
   const TwitterLoginWebview({
     required this.token,
     required this.callbackUrl,
@@ -29,16 +29,43 @@ class TwitterLoginWebview extends StatelessWidget {
   /// When `null`, the user will always stay in the webview.
   final OnExternalNavigation? onExternalNavigation;
 
+  @override
+  State<TwitterLoginWebview> createState() => _TwitterLoginWebviewState();
+}
+
+class _TwitterLoginWebviewState extends State<TwitterLoginWebview> {
+  late final WebViewController _webviewController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _webviewController = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(onNavigationRequest: _navigationDelegate),
+      )
+      ..loadRequest(
+        Uri.https(
+          'api.twitter.com',
+          'oauth/authorize',
+          {
+            'force_login': 'true',
+            'oauth_token': widget.token,
+          },
+        ),
+      );
+  }
+
   NavigationDecision _navigationDelegate(
-    BuildContext context,
     NavigationRequest navigation,
   ) {
-    if (navigation.url.startsWith(callbackUrl)) {
+    if (navigation.url.startsWith(widget.callbackUrl)) {
       // received callback - pop navigator with callback url
       Navigator.of(context).pop(Uri.dataFromString(navigation.url));
       return NavigationDecision.prevent;
     } else {
-      if (onExternalNavigation == null) {
+      if (widget.onExternalNavigation == null) {
         // always stay in in-app webview
         return NavigationDecision.navigate;
       } else if ([
@@ -55,7 +82,7 @@ class TwitterLoginWebview extends StatelessWidget {
         return NavigationDecision.navigate;
       } else {
         // prevent navigation to external page
-        onExternalNavigation?.call(navigation.url);
+        widget.onExternalNavigation?.call(navigation.url);
         return NavigationDecision.prevent;
       }
     }
@@ -63,23 +90,9 @@ class TwitterLoginWebview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final initialUrl = Uri.https(
-      'api.twitter.com',
-      'oauth/authorize',
-      {
-        'force_login': 'true',
-        'oauth_token': token,
-      },
-    );
-
-    return WebView(
-      initialUrl: initialUrl.toString(),
-      javascriptMode: JavascriptMode.unrestricted,
+    return WebViewWidget(
+      controller: _webviewController,
       gestureRecognizers: {Factory(() => EagerGestureRecognizer())},
-      navigationDelegate: (navigation) => _navigationDelegate(
-        context,
-        navigation,
-      ),
     );
   }
 }

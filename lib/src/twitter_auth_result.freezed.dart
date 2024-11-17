@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'twitter_auth_result.dart';
 
@@ -12,7 +12,7 @@ part of 'twitter_auth_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TwitterAuthResult {
@@ -26,9 +26,9 @@ mixin _$TwitterAuthResult {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token, String secret, String userId)? success,
-    TResult Function(dynamic error, StackTrace? stackTrace)? failure,
-    TResult Function()? cancelled,
+    TResult? Function(String token, String secret, String userId)? success,
+    TResult? Function(dynamic error, StackTrace? stackTrace)? failure,
+    TResult? Function()? cancelled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,9 +48,9 @@ mixin _$TwitterAuthResult {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Cancelled value)? cancelled,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Cancelled value)? cancelled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,53 +67,59 @@ mixin _$TwitterAuthResult {
 abstract class $TwitterAuthResultCopyWith<$Res> {
   factory $TwitterAuthResultCopyWith(
           TwitterAuthResult value, $Res Function(TwitterAuthResult) then) =
-      _$TwitterAuthResultCopyWithImpl<$Res>;
+      _$TwitterAuthResultCopyWithImpl<$Res, TwitterAuthResult>;
 }
 
 /// @nodoc
-class _$TwitterAuthResultCopyWithImpl<$Res>
+class _$TwitterAuthResultCopyWithImpl<$Res, $Val extends TwitterAuthResult>
     implements $TwitterAuthResultCopyWith<$Res> {
   _$TwitterAuthResultCopyWithImpl(this._value, this._then);
 
-  final TwitterAuthResult _value;
   // ignore: unused_field
-  final $Res Function(TwitterAuthResult) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String token, String secret, String userId});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
-      : super(_value, (v) => _then(v as _$_Success));
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$TwitterAuthResultCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Success get _value => super._value as _$_Success;
-
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? secret = freezed,
-    Object? userId = freezed,
+    Object? token = null,
+    Object? secret = null,
+    Object? userId = null,
   }) {
-    return _then(_$_Success(
-      token: token == freezed
+    return _then(_$SuccessImpl(
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      secret: secret == freezed
+      secret: null == secret
           ? _value.secret
           : secret // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: userId == freezed
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -123,8 +129,8 @@ class __$$_SuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success(
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl(
       {required this.token, required this.secret, required this.userId});
 
   @override
@@ -140,26 +146,25 @@ class _$_Success implements _Success {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality().equals(other.secret, secret) &&
-            const DeepCollectionEquality().equals(other.userId, userId));
+            other is _$SuccessImpl &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.secret, secret) || other.secret == secret) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(secret),
-      const DeepCollectionEquality().hash(userId));
+  int get hashCode => Object.hash(runtimeType, token, secret, userId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -175,9 +180,9 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token, String secret, String userId)? success,
-    TResult Function(dynamic error, StackTrace? stackTrace)? failure,
-    TResult Function()? cancelled,
+    TResult? Function(String token, String secret, String userId)? success,
+    TResult? Function(dynamic error, StackTrace? stackTrace)? failure,
+    TResult? Function()? cancelled,
   }) {
     return success?.call(token, secret, userId);
   }
@@ -209,9 +214,9 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Cancelled value)? cancelled,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Cancelled value)? cancelled,
   }) {
     return success?.call(this);
   }
@@ -235,45 +240,50 @@ abstract class _Success implements TwitterAuthResult {
   const factory _Success(
       {required final String token,
       required final String secret,
-      required final String userId}) = _$_Success;
+      required final String userId}) = _$SuccessImpl;
 
-  String get token => throw _privateConstructorUsedError;
-  String get secret => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+  String get token;
+  String get secret;
+  String get userId;
+
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FailureCopyWith<$Res> {
-  factory _$$_FailureCopyWith(
-          _$_Failure value, $Res Function(_$_Failure) then) =
-      __$$_FailureCopyWithImpl<$Res>;
+abstract class _$$FailureImplCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic error, StackTrace? stackTrace});
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res>
-    extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$$_FailureCopyWith<$Res> {
-  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
-      : super(_value, (v) => _then(v as _$_Failure));
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$TwitterAuthResultCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Failure get _value => super._value as _$_Failure;
-
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
     Object? stackTrace = freezed,
   }) {
-    return _then(_$_Failure(
-      error == freezed
+    return _then(_$FailureImpl(
+      freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      stackTrace == freezed
+      freezed == stackTrace
           ? _value.stackTrace
           : stackTrace // ignore: cast_nullable_to_non_nullable
               as StackTrace?,
@@ -283,8 +293,8 @@ class __$$_FailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure implements _Failure {
-  const _$_Failure([this.error, this.stackTrace]);
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl([this.error, this.stackTrace]);
 
   @override
   final dynamic error;
@@ -297,25 +307,26 @@ class _$_Failure implements _Failure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Failure &&
+            other is _$FailureImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace));
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
-      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,9 +342,9 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token, String secret, String userId)? success,
-    TResult Function(dynamic error, StackTrace? stackTrace)? failure,
-    TResult Function()? cancelled,
+    TResult? Function(String token, String secret, String userId)? success,
+    TResult? Function(dynamic error, StackTrace? stackTrace)? failure,
+    TResult? Function()? cancelled,
   }) {
     return failure?.call(error, stackTrace);
   }
@@ -365,9 +376,9 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Cancelled value)? cancelled,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Cancelled value)? cancelled,
   }) {
     return failure?.call(this);
   }
@@ -389,38 +400,41 @@ class _$_Failure implements _Failure {
 
 abstract class _Failure implements TwitterAuthResult {
   const factory _Failure([final dynamic error, final StackTrace? stackTrace]) =
-      _$_Failure;
+      _$FailureImpl;
 
-  dynamic get error => throw _privateConstructorUsedError;
-  StackTrace? get stackTrace => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+  dynamic get error;
+  StackTrace? get stackTrace;
+
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_CancelledCopyWith<$Res> {
-  factory _$$_CancelledCopyWith(
-          _$_Cancelled value, $Res Function(_$_Cancelled) then) =
-      __$$_CancelledCopyWithImpl<$Res>;
+abstract class _$$CancelledImplCopyWith<$Res> {
+  factory _$$CancelledImplCopyWith(
+          _$CancelledImpl value, $Res Function(_$CancelledImpl) then) =
+      __$$CancelledImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CancelledCopyWithImpl<$Res>
-    extends _$TwitterAuthResultCopyWithImpl<$Res>
-    implements _$$_CancelledCopyWith<$Res> {
-  __$$_CancelledCopyWithImpl(
-      _$_Cancelled _value, $Res Function(_$_Cancelled) _then)
-      : super(_value, (v) => _then(v as _$_Cancelled));
+class __$$CancelledImplCopyWithImpl<$Res>
+    extends _$TwitterAuthResultCopyWithImpl<$Res, _$CancelledImpl>
+    implements _$$CancelledImplCopyWith<$Res> {
+  __$$CancelledImplCopyWithImpl(
+      _$CancelledImpl _value, $Res Function(_$CancelledImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Cancelled get _value => super._value as _$_Cancelled;
+  /// Create a copy of TwitterAuthResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Cancelled implements _Cancelled {
-  const _$_Cancelled();
+class _$CancelledImpl implements _Cancelled {
+  const _$CancelledImpl();
 
   @override
   String toString() {
@@ -428,9 +442,9 @@ class _$_Cancelled implements _Cancelled {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Cancelled);
+        (other.runtimeType == runtimeType && other is _$CancelledImpl);
   }
 
   @override
@@ -450,9 +464,9 @@ class _$_Cancelled implements _Cancelled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token, String secret, String userId)? success,
-    TResult Function(dynamic error, StackTrace? stackTrace)? failure,
-    TResult Function()? cancelled,
+    TResult? Function(String token, String secret, String userId)? success,
+    TResult? Function(dynamic error, StackTrace? stackTrace)? failure,
+    TResult? Function()? cancelled,
   }) {
     return cancelled?.call();
   }
@@ -484,9 +498,9 @@ class _$_Cancelled implements _Cancelled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Cancelled value)? cancelled,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Cancelled value)? cancelled,
   }) {
     return cancelled?.call(this);
   }
@@ -507,5 +521,5 @@ class _$_Cancelled implements _Cancelled {
 }
 
 abstract class _Cancelled implements TwitterAuthResult {
-  const factory _Cancelled() = _$_Cancelled;
+  const factory _Cancelled() = _$CancelledImpl;
 }
